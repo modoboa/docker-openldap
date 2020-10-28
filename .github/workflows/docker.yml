@@ -24,6 +24,4 @@ jobs:
           file: ./Dockerfile
           pull: true
           push: true
-          cache-from: type=registry,ref=modoboa/docker-openldap:latest
-          cache-to: type=inline
-          tags: latest
+          tags: modoboa/docker-openldap:latest
