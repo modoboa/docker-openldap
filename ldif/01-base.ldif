@@ -1,19 +1,19 @@
-dn: ou=groups,dc=example,dc=com
+dn: ou=groups,{{ LDAP_BASE_DN }}
 objectClass: organizationalUnit
 ou: groups
 
-dn: ou=users,dc=example,dc=com
+dn: ou=users,{{ LDAP_BASE_DN }}
 objectClass: organizationalUnit
 ou: users
 
-dn: cn=admins,ou=groups,dc=example,dc=com
+dn: cn=admins,ou=groups,{{ LDAP_BASE_DN }}
 cn: admins
 gidnumber: 10001
-memberuid: mailadmin
+memberUid: mailadmin
 objectclass: posixGroup
 objectclass: top
 
-dn: cn=mailadmin,ou=users,dc=example,dc=com
+dn: cn=mailadmin,ou=users,{{ LDAP_BASE_DN }}
 objectClass: inetOrgPerson
 objectClass: organizationalPerson
 objectClass: person
@@ -25,7 +25,7 @@ sn: Admin
 mail: mailadmin@example.com
 userPassword: {SSHA}AIzygLSXlArhAMzddUriXQxf7UlkqopP
 
-dn: cn=testuser,ou=users,dc=example,dc=com
+dn: cn=testuser,ou=users,{{ LDAP_BASE_DN }}
 objectClass: inetOrgPerson
 objectClass: organizationalPerson
 objectClass: person

@@ -1,0 +1,9 @@
+dn: olcDatabase={1}{{ LDAP_BACKEND }},cn=config
+changetype: modify
+delete: olcAccess
+olcAccess: to * by self read by dn="cn=admin,{{ LDAP_BASE_DN }}" write by * none
+
+dn: olcDatabase={1}{{ LDAP_BACKEND }},cn=config
+changetype: modify
+add: olcAccess
+olcAccess: to * by self read by dn="cn=admin,{{ LDAP_BASE_DN }}" write by users read by * none
